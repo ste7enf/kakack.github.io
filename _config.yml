@@ -1,6 +1,6 @@
 markdown: rdiscount
 permalink: /:year/:month/:title/
-url: http://geeklu.com
-author: 卢克
+url: http://kakack.github.io
+author: Kaka Chen
 pygments: true
 paginate: 24
