@@ -9,12 +9,12 @@ comments: yes
 
 
 
-                     Coder In Zhejiang University.Working on Cloud，Hadoop，ML
+     Coder In Zhejiang University.Working on Cloud，Hadoop，ML
                       
                       
 - 邮箱:  
   + kakack@126.com  
-  + god_mode@yeah.net  
+  + kakack@qq.com  
 - 豆瓣: [戳( >﹏<。)～](http://www.douban.com/people/kakack/)  
 - github : [再戳( >﹏<。)～](https://github.com/kakack)  
 
