@@ -1,3 +1,10 @@
+---
+
+layout: post
+categories: [Github]
+tags: [github , mac]
+
+---
 # Pages on Github（Mac）
 
 一直打算在github上搞个博客，一直由于懒惰没能成行<br>
