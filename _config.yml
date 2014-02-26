@@ -1,6 +1,6 @@
 markdown: rdiscount
 permalink: /:year/:month/:title/
-author: Ello
+author: Kaka Chen	
 pygments: true
 paginate: 16
-url: http://ellochen.github.com
+url: http://kakack.github.io
