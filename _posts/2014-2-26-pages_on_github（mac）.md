@@ -5,7 +5,6 @@ categories: [Github]
 tags: [github , mac]
 
 ---
-# Pages on Github（Mac）
 
 一直打算在github上搞个博客，一直由于懒惰没能成行<br>
 做本科毕设的时候虽然有接触过一点web前端的内容，但都是很皮毛的html+css+js，要说自己从零开始写个好看点的page出来真不容易，此外md语言之前也没怎么多写，作为逼格直线上升的同学，*letax*和*md*简直就是必修课，不然还怎么愉快地嘲笑那些用**Word**和**txt**的小伙伴们233333  
