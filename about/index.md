@@ -16,5 +16,7 @@ comments: yes
   + kakack@126.com  
   + kakack@qq.com  
 - 豆瓣: [戳( >﹏<。)～](http://www.douban.com/people/kakack/)  
-- github : [再戳( >﹏<。)～](https://github.com/kakack)  
+- github : [再戳( >﹏<。)～](https://github.com/kakack) 
+- 微博：[@kaka修炼成精](http://weibo.com/kakack) 
+
 
