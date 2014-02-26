@@ -5,7 +5,9 @@ categories: [Github]
 tags: [github , mac]
 
 ---
-![](http://img.hb.aicdn.com/2fff42ce61c48d8caf8698b2b3c9ea43a1bddeae107fa-9hsUek_fw658)
+![](http://ww3.sinaimg.cn/mw690/b03122c9gw1dy8p12igokg.gif)
+
+
 一直打算在github上搞个博客，一直由于懒惰没能成行<br>
 做本科毕设的时候虽然有接触过一点web前端的内容，但都是很皮毛的html+css+js，要说自己从零开始写个好看点的page出来真不容易，此外md语言之前也没怎么多写，作为逼格直线上升的同学，*letax*和*md*简直就是必修课，不然还怎么愉快地嘲笑那些用**Word**和**txt**的小伙伴们233333  
 
