@@ -4,3 +4,5 @@ author: Kaka Chen
 pygments: true
 paginate: 16
 url: http://kakack.github.io
+baseurl: /
+encoding: utf-8
