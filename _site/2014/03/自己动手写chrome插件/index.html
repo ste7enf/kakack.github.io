@@ -109,7 +109,7 @@
 
 <p>然后可以为自己的插件设计一个icon，一般icon要比19x19大，于是我趁机自学了一会儿ps，话说mac上的ps确实比较好用。我选了这么一个icon。</p>
 
-<p><img src="http://g.hiphotos.bdimg.com/album/s%3D1000%3Bq%3D90/sign=04dedc99e9c4b7453094b316ffcc2566/3801213fb80e7bec5a6c59512d2eb9389a506bcf.jpg" alt="" /></p>
+<p><img src="https://lh4.googleusercontent.com/6o17ENKhCJT5YtwiaXjBvc9sHU-rP8PsMmeR6oW5Bw=s256-no" alt="" /></p>
 
 <p>放到默认路径下，命名为icon.png，与manifest上写的一致。其实很多比较成熟的插件的icon都会放在同一的image文件夹下，并且根据像素大小区分的比较细致，在此不表。</p>
 
@@ -124,13 +124,13 @@
 
 <p>因为我想做的是即时比分直播的插件，但是找了下有类似的页面但是没类似的api，由于我自己web水平不高，于是想了个馊主意，去<a href="http://www.hupu.com">hupu</a>上抓取网页的一部分来动态生成我要的页面。最后我找到了hupu页面上确实有这个部分，最后我提取到这样的一个页面，指向今天的nba比赛比分简报，着实是我想要的内容。页面url是http://www.hupu.com/global/match?type=nba&amp;date=2014-03-01，最后date后的值是当日的日期，而js获取日期的函数我会，但是却遇到了一个麻烦，就是我不会写怎么从外域用js抓取某个页面中某一段的html代码再生成一个新的html页面，这也直接导致了这个插件流产。后来我调整了页面的大小，去掉了头尾不需要的部分，得到了这么一个插件效果：</p>
 
-<p><img src="http://e.hiphotos.bdimg.com/album/s%3D680%3Bq%3D90/sign=6706c6f73b12b31bc36cce21b6234747/2e2eb9389b504fc2c1e9eab5e7dde71191ef6dcf.jpg" alt="" /></p>
+<p><img src="https://lh6.googleusercontent.com/-31qIooQxMyc/UxW9LN1YYuI/AAAAAAAAADw/mra9GWe_mB4/w680-h906-no/2e2eb9389b504fc2c1e9eab5e7dde71191ef6dcf.jpg" alt="" /></p>
 
 <p>这基本也是我想要的效果，上面队名和数据、视频的超链接都能保持，可惜这是我写死的静态页面，之后就想找个靠谱的前端工程师，能帮我做成动态的。我原本以为能用正则表达式去把外域网页的html匹配下来，结果呵呵了……</p>
 
 <p>后来在坑爹的饼师兄建议下用iframe插了个球队信息进去，摔，这完全不是我要的啊！</p>
 
-<p><img src="http://e.hiphotos.bdimg.com/album/s%3D1000%3Bq%3D90/sign=650da77cc1cec3fd8f3ea375e6b8ef4e/8644ebf81a4c510f05e6b8aa6259252dd42aa564.jpg" alt="" /></p>
+<p><img src="https://lh6.googleusercontent.com/-0ZuUqZQERfs/UxW9LIdNQVI/AAAAAAAAAD0/CaFcSeqUv0k/w1060-h856-no/8644ebf81a4c510f05e6b8aa6259252dd42aa564.jpg" alt="" /></p>
 
 <p>最后只要把做好的插件保存好，然后在chrome插件管理中，选中开发者模式，再载入本地插件，就能在上面查看调试了。</p>
 
@@ -205,6 +205,8 @@ $(function(){
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
+        url = 'http://kakack.github.io/2014/03/JVM%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/';
+        
         }
         if (url) {
             window.location = url;
@@ -218,7 +220,7 @@ $(function(){
       </div>
 
     <footer>
-        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2008 - 2014 by <a href="http://kakack.github.io/about/">kakack</a> | <span class="label label-info">2014-03-03 01:20:42 CST</span></small></p>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2008 - 2014 by <a href="http://kakack.github.io/about/">kakack</a> | <span class="label label-info">2014-03-13 01:33:50 CST</span></small></p>
     </footer>
 
     </div>
