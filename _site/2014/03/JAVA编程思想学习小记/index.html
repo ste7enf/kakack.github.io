@@ -69,12 +69,10 @@
 
 <pre><code>ok:
 for(int i=0;i&lt;10;i++) {   
-
    for(int j=0;j&lt;10;j++) {   
      System.out.println(“i=” + i + “,j=” + j);
      if(j == 5) break ok;
   }
-
 }
 </code></pre>
 
@@ -83,7 +81,7 @@ for(int i=0;i&lt;10;i++) {
 </ul>
 
 
-<pre><code>int arr[][] ={   {1,2,3},{4,5,6,7},{9}    };
+<pre><code>int arr[][] ={   {1,2,3},{4,5,6,7},{9}    };//卧槽这边这个双大括号在git上居然会报错！给跪了！
 boolean found = false;
 for(int i=0;i&lt;arr.length&amp;&amp; !found;i++){
    for(int j=0;j&lt;arr[i].length;j++){
@@ -431,6 +429,8 @@ eclipse下不报错，但应该也不行），但接口中的抽象方法只能�
 
 <h2>持有对象与集合类</h2>
 
+<p><img src="https://lh3.googleusercontent.com/-pyddD-tXSso/UyrRne3PS6I/AAAAAAAAAFA/tUGNvkKkJSs/w1072-h1006-no/%25E6%2596%25B0%25E6%2596%2587%25E6%25A1%25A3_1+%25281%2529.jpg" alt="" /></p>
+
 <ol>
 <li>Collection，最基本的集合接口，都支持iterator()方法来遍历集合
 
@@ -444,11 +444,11 @@ eclipse下不报错，但应该也不行），但接口中的抽象方法只能�
 <li><p><a href="http://www.cnblogs.com/skywang12345/p/3308852.html">Stack</a>：继承自Vector实现一个后进先出的堆栈，也是数组实现</p></li>
 </ul>
 </li>
-<li>Set
+<li>Set：与Collection完全一样的接口，所以没有额外功能，不保存重复的对象，需要定义equals()方法来确保对象唯一性，不保证顺序
 
 <ul>
-<li><p><a href="http://www.cnblogs.com/skywang12345/p/3311252.html">HashSet</a>：最快的获取元素方式，同步访问，底层使用hashmap来保存元素，元素是无序的</p></li>
-<li><p><a href="http://www.cnblogs.com/skywang12345/p/3311268.html">TreeSet</a>：按比较顺序的升序保存对象，使用TreeMap实现，元素是有序的</p></li>
+<li><p><a href="http://www.cnblogs.com/skywang12345/p/3311252.html">HashSet</a>：使用了散列，最快的获取元素方式，同步访问，底层使用hashmap来保存元素，元素是无序的，存入元素需要HashCode</p></li>
+<li><p><a href="http://www.cnblogs.com/skywang12345/p/3311268.html">TreeSet</a>：按比较顺序的升序保存对象，使用TreeMap实现，元素是有序的，元素必须实现comparable接口</p></li>
 <li><p>LinkedHashSet：按被添加的顺序保存对象</p></li>
 </ul>
 </li>
@@ -463,6 +463,30 @@ eclipse下不报错，但应该也不行），但接口中的抽象方法只能�
 <li><p>WeakHashMap：改进的HashMap，实现弱引用，如果一个key不被外部引用则会被收回。</p></li>
 </ul>
 </li>
+</ol>
+
+
+<p>Sort()方法排序，要继承comparator接口，并且利用重写的comparable，shuffle()方法则是随机打乱容器中顺序</p>
+
+<p>迭代器：不关心容器类型，用于遍历并选择序列中的对象，作为轻量级对象，创建代价较小，但是会有些奇怪的限制比如在java里只能单向移动。其操作有：</p>
+
+<ul>
+<li>iterator()方法从容器得到一个迭代器，指向序列第一个元素</li>
+<li>next()获得序列中下一个元素</li>
+<li>hasNext()检查序列中是否还有元素</li>
+<li>remove()将新近返回的元素删除</li>
+</ul>
+
+
+<p> 迭代器带来的最大好处就是可以不必关心容器的类型就能对容器中的对象进行操作。有一个更加强大的子类：ListIterator，只能用于List类的访问，但是可以双向移动，而且可以创建迭代器所在位置的前一个和后一个元素的索引</p>
+
+<p>对List来说，你也可以通过listIterator()取得其迭代器，两种迭代器在有些时候是不能通用的，Iterator和ListIterator主要区别在以下方面：</p>
+
+<ol>
+<li><p>ListIterator有add()方法，可以向List中添加对象，而Iterator不能</p></li>
+<li><p>ListIterator和Iterator都有hasNext()和next()方法，可以实现顺序向后遍历，但是ListIterator有hasPrevious()和previous()方法，可以实现逆向（顺序向前）遍历。Iterator就不可以。</p></li>
+<li><p>ListIterator可以定位当前的索引位置，nextIndex()和previousIndex()可以实现。Iterator没有此功能。</p></li>
+<li><p>都可实现删除对象，但是ListIterator可以实现对象的修改，set()方法可以实现。Iierator仅能遍历，不能修改。</p></li>
 </ol>
 
 
@@ -589,6 +613,25 @@ nullabc
 
 <p>在线程中start()方法是进入就绪状态，run()方法是启动线程。</p>
 
+<hr />
+
+<h2>初始化和垃圾清理</h2>
+
+<p>Java有特殊的技巧来回收无用对象占据的内存资源，对于一些特殊情况，假如对象不是用new来得到了一块“特殊”的内存空间（多指一些所谓的“本地方法”，即非java代码的方式），就需要用finalize()方法来释放，一旦准备好释放，首先调用finalize()方法，并且在下一次垃圾回收动作发生时才会真正回收对象占用内存。在Java中：1，对象不一定总被垃圾回收；2，垃圾回收不等于“析构”；3，垃圾回收只和内存有关。
+常用的垃圾回收方式：</p>
+
+<ul>
+<li>stop-and-copy：先暂停运行程序，把所有存货的对象从当前堆复制到另一个堆，没复制过去的都是垃圾但是效率稍低，因为1.维护两个堆，2.程序进入稳定后可能只有少量垃圾，所以复制操作浪费</li>
+<li>mark-and-down：遍历所有的引用，每当找到一个存活的对象，就会设一个标记，全部标记工作结束后，开始清理，当只有少量垃圾的时候表现比较好，剩下的空间是不连续的。</li>
+</ul>
+
+
+<p>原则上每个类实例化后都必须进行初始化，但对于基本类型，会有一个默认的初始值。</p>
+
+<p>在类的内部，变量定义的先后顺序决定了初始化的顺序，即使变量定义散布于方法定义之间，仍旧会在任何方法（包括构造器）调用之前得到初始化</p>
+
+<p>初始化的顺序先静态对象，再是非静态对象</p>
+
 </section>
 <section class="meta">
 <span class="author">
@@ -662,7 +705,7 @@ $(function(){
       </div>
 
     <footer>
-        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2008 - 2014 by <a href="http://kakack.github.io/about/">kakack</a> | <span class="label label-info">2014-03-13 01:33:50 CST</span></small></p>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2008 - 2014 by <a href="http://kakack.github.io/about/">kakack</a> | <span class="label label-info">2014-04-03 21:48:26 CST</span></small></p>
     </footer>
 
     </div>
