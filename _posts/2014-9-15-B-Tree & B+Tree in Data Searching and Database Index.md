@@ -157,6 +157,10 @@ B-Tree和B+Tree是目前数据库系统和文件系统中常用的索引结构
 - 储存的空间复杂度是：O(n)
 - 插入，删除和查询操作需要：![](http://upload.wikimedia.org/math/8/c/0/8c0073eeb8b26520b553eda1a558a986.png)
 
+- - -
+##例子
+
+
 
 
 
