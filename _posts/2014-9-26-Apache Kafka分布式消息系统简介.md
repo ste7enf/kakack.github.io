@@ -1,7 +1,7 @@
 ---
 
 layout: post
-categories: [Algorithm]
+categories: [Big Data]
 tags: [Kafka,Distributed System]
 
 ---
