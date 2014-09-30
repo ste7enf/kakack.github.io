@@ -19,5 +19,5 @@ tags: [String,C++,Algorithm,STL]
 ##String in C++
 
 
-
+从C++的库函数手册上看
 
