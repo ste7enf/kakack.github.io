@@ -19,5 +19,5 @@ tags: [String,C++,Algorithm,STL]
 ##String in C++
 
 
-从C++的库函数手册上看
+从[C++的库函数手册](https://github.com/kakack/kakack.github.io/blob/master/attachment/C%2B%2B%E5%87%BD%E6%95%B0%E6%89%8B%E5%86%8C%2B(LibraryFunctions).chm)上看
 
